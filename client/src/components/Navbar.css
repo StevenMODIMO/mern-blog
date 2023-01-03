@@ -1,0 +1,69 @@
+nav a {
+    color: blue;
+}
+
+header {
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    width: 200px;
+}
+
+.burger {
+    margin: 5px 10px 0 0;
+    font-size: 30px;
+}
+
+.create {
+    display: flex;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.profile {
+    display: flex;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.signup {
+    display: flex;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.login {
+    display: flex;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.nav-icon {
+    margin: 4px 5px 0 0;
+}
+
+.nav-links {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+@media screen and (min-width: 800px) {
+    .nav-links {
+        display: flex;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
