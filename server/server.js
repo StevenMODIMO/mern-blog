@@ -8,6 +8,7 @@ const colors = require("colors");
 colors.setTheme({
   custom: ['red', 'underline', 'bold', 'inverse', 'bgMagenta']
 });
+const userRoutes = require('./routes/userRoutes')
 
 // middleware functions
 app.use(cors());
@@ -17,7 +18,7 @@ app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 })
-
+app.use('/api/user', userRoutes)
 
 mongoose.connect(process.env.MONGO_URI).then(() => {
 app.listen(process.env.PORT, () => {

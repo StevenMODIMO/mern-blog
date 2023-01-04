@@ -26,7 +26,7 @@ export default function Navbar() {
           {show ? <FaTimes /> : <GiHamburgerMenu />}
         </div>
       </header>
-      <motion.main initial={{ x: -300}} animate={{ x: 100}} className={show ? "nav-links active": "nav-links"}>
+      <motion.main  className={show ? "nav-links active": "nav-links"}>
         <div className="create">
           <IoMdCreate className="nav-icon" />
           <NavLink
