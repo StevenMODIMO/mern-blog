@@ -31,7 +31,7 @@ export default function Login() {
       <form onSubmit={formSubmission}>
         <input value={email} type="text" onChange={(e) => setEmail(e.target.value)} />
         <input value={password} type="password" onChange={(e) => setPassword(e.target.value)} />
-        <button>Sign Up</button>
+        <button>Log in</button>
       </form>
       {error && <div>{error}</div>}
     </div>
