@@ -8,6 +8,7 @@ import { FaICursor, FaTimes } from 'react-icons/fa'
 import Logo from "../assets/logo.png";
 import "./Navbar.css";
 import { motion } from 'framer-motion'
+import { useAuth } from '../context/AuthContext'
 
 export default function Navbar() {
   const [show,setShow] = useState(false)
@@ -16,6 +17,7 @@ export default function Navbar() {
   };
   const showNavLinks = () => setShow(!show)
   const closeMobile = () => setShow(false)
+  const { user } = useAuth()
   return (
     <nav>
       <header>
@@ -27,6 +29,7 @@ export default function Navbar() {
         </div>
       </header>
       <motion.main  className={show ? "nav-links active": "nav-links"}>
+        {user ? <>
         <div className="create">
           <IoMdCreate className="nav-icon" />
           <NavLink
@@ -45,6 +48,8 @@ export default function Navbar() {
             Profile
           </NavLink>
         </div>
+        </> : 
+        <>
         <div className="signup">
           <MdOutlineAppRegistration className="nav-icon" />
           <NavLink
@@ -62,7 +67,7 @@ export default function Navbar() {
           >
             Login
           </NavLink>
-        </div>
+        </div> </>}
       </motion.main>
     </nav>
   );
