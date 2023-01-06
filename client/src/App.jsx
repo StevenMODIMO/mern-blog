@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path='/' element={user ? <Home /> : <Navigate to='/login' /> } />
+        <Route path='/' element={<Home />}  />
         <Route path='create' element={user ? <Create /> : <Navigate to='/login' /> } />
         <Route path='profile' element={user ? <Profile /> : <Navigate to='/login' /> } />
         <Route path='signup' element={!user ? <Signup /> : <Navigate to='/' /> } />

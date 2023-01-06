@@ -29,6 +29,17 @@ header img {
     font-size: 20px;
 }
 
+.logout {
+    display: flex;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.logout div {
+    color: blue;
+    cursor: pointer;
+}
+
 .signup {
     display: flex;
     margin: 10px;

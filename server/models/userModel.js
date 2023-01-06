@@ -12,6 +12,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  darkMode: {
+    type: Boolean,
+    default: false
+  }
 });
 
 // signup method

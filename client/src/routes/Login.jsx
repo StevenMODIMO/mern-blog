@@ -1,9 +1,14 @@
 import { useState } from "react";
+import { useAuth } from "../context/AuthContext";
+import { FcGoogle } from "react-icons/fc";
+import { BsTwitter, BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
+import { SiTiktok } from 'react-icons/si'
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const { dispatch } = useAuth()
   const formSubmission = async (e) => {
     e.preventDefault();
     const response = await fetch("http://localhost:4000/api/user/login", {
@@ -24,6 +29,9 @@ export default function Login() {
       setError(null);
       setEmail("");
       setPassword("");
+      localStorage.setItem("user", JSON.stringify(json))
+
+      dispatch({ type: 'LOGIN', payload: json })
     }
   };
   return (
