@@ -1,8 +1,9 @@
 import { useState } from "react";
+import "./Form.css";
 import { useAuth } from "../context/AuthContext";
 import { FcGoogle } from "react-icons/fc";
-import { BsTwitter, BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
-import { SiTiktok } from 'react-icons/si'
+import { BsTwitter, BsFacebook } from "react-icons/bs";
+import { GoAlert } from 'react-icons/go'
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -35,21 +36,42 @@ export default function Signup() {
     }
   };
   return (
-    <div className="singup-form">
-      <form onSubmit={formSubmission}>
+    <div className="forms">
+      <form onSubmit={formSubmission} className="signup-form form">
         <input
           value={email}
           type="text"
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email Address"
         />
         <input
           value={password}
           type="password"
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
         />
         <button>Sign Up</button>
+        {error && <div className="error">{error}</div>}
       </form>
-      {error && <div>{error}</div>}
+      <div className="social">
+        <div className="alert">
+          <GoAlert className="alert-icon" />
+          <div>Disabled due to Technical issues</div>
+        </div>
+        <div className="social-links">
+          <FcGoogle className="social-icons" />
+          <div>Continue with Google</div>
+        </div>
+        <div className="social-links">
+          <BsFacebook className="social-icons" />
+          <div>Continue with Facebook</div>
+        </div>
+        <div className="social-links">
+          <BsTwitter className="social-icons" />
+          <div>Continue with Twitter</div>
+        </div>
+        
+      </div>
     </div>
   );
 }

@@ -55,7 +55,7 @@ export default function Navbar() {
             </div>
           </>
         ) : (
-          <>
+          <> 
             <div className="signup">
               <MdOutlineAppRegistration className="nav-icon" />
               <NavLink to="/signup" onClick={closeMobile}>
