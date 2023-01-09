@@ -100,5 +100,12 @@
 @media screen and (min-width: 700px) {
     .forms {
         flex-direction: row;
+        margin: 100px 0 0 30px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .forms {
+        margin: 150px 0 0 300px;
     }
 }

@@ -24,6 +24,8 @@ export default function Signup() {
 
     if (!response.ok) {
       setError(json.error);
+      setEmail("")
+      setPassword("")
     }
 
     if (response.ok) {
@@ -37,7 +39,9 @@ export default function Signup() {
   };
   return (
     <div className="forms">
-      <form onSubmit={formSubmission} className="signup-form form">
+      <form onSubmit={formSubmission} className="signup-form form" onFocus={() => {
+        setError(null)
+      }}>
         <input
           value={email}
           type="text"

@@ -24,6 +24,8 @@ export default function Login() {
 
     if (!response.ok) {
       setError(json.error);
+      setEmail("")
+      setPassword("")
     }
 
     if (response.ok) {
@@ -37,7 +39,9 @@ export default function Login() {
   };
   return (
     <div className="forms">
-      <form onSubmit={formSubmission} className="login-form form">
+      <form onSubmit={formSubmission} className="login-form form" onFocus={() => {
+        setError(null)
+      }}>
         <input
           value={email}
           type="text"
